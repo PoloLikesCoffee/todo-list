@@ -1,22 +1,19 @@
-import initializeControl from "./controller"
-
 //Module - layout app
 const initializeDOM = (function () {
-    
-    const createHeader = () => {
-        const header = document.createElement('div');
-        header.innerHTML = `Todo List`;
-        header.classList.add('header');
+	const createHeader = () => {
+		const header = document.createElement('div');
+		header.innerHTML = `<i class="fas fa-thumbtack"></i> Todo List`;
+		header.classList.add('header');
 
-        return header;
-    }
+		return header;
+	};
 
-    const createProjectContainer = () => {
-        const projectContainer = document.createElement('div');
-        projectContainer.classList.add('project-container');
+	const createProjectContainer = () => {
+		const projectContainer = document.createElement('div');
+		projectContainer.classList.add('project-container');
 
-        projectContainer.innerHTML = `
-            <h2 class="project-list-title">私のリスト</h2>
+		projectContainer.innerHTML = `
+            <h2 class="project-list-title"><i class="far fa-hand-point-right"></i> することリスト <i class="far fa-hand-point-down"></i></h2>
             <ul class="project-list" data-projects>
             
             </ul>
@@ -25,7 +22,7 @@ const initializeDOM = (function () {
                 <input 
                     type="text" 
                     class="new project"
-                    maxlength="22"
+                    maxlength="20"
                     data-new-project-input
                     placeholder="新しいプロジェクト名"
                     aria-label="new project name"
@@ -34,15 +31,15 @@ const initializeDOM = (function () {
             </form>
         `;
 
-        return projectContainer;
-    }
+		return projectContainer;
+	};
 
-    const createTodoContainer = () => {
-        const todoContainer = document.createElement('div');
-        todoContainer.classList.add('task-container');
-        todoContainer.setAttribute('data-project-display-container', '');
+	const createTodoContainer = () => {
+		const todoContainer = document.createElement('div');
+		todoContainer.classList.add('task-container');
+		todoContainer.setAttribute('data-project-display-container', '');
 
-        todoContainer.innerHTML = `
+		todoContainer.innerHTML = `
             <div class="todo-header">
                 <h2 class="project-title" data-project-title></h2>
                 <div class="counter-container">
@@ -66,7 +63,7 @@ const initializeDOM = (function () {
                             placeholder="新しいタスク名"
                             aria-label="new task name"
                         />
-                        <button class="btn create create-task" aria-label="create new task"><i class="fas fa-plus"></i></button>
+                        <button class="btn create create-task" aria-label="create new task"><i class="fas fa-plus-circle"></i></button>
                     </form>
                 </div>
 
@@ -74,7 +71,7 @@ const initializeDOM = (function () {
 
             <div class="delete-stuff">
                 <button class="btn delete" data-clear-complete-tasks-button><i class="fas fa-tasks"></i> Clear completed tasks</button>
-                <button class="btn delete" data-delete-project-button><i class="fa fa-minus-square"></i> Delete project</button>
+                <button class="btn delete" data-delete-project-button><i class="fas fa-folder-minus"></i> Delete project</button>
             </div>
 
             <template id="task-template">
@@ -97,18 +94,22 @@ const initializeDOM = (function () {
                 </div>
             </template>
         `;
-        return todoContainer;
-    }
+		return todoContainer;
+	};
 
-    const createLayout = () => {
-        const content = document.getElementById('content');
+	const createLayout = () => {
+		const content = document.getElementById('content');
 
-        content.append(createHeader(), createProjectContainer(), createTodoContainer());
-    }
+		content.append(
+			createHeader(),
+			createProjectContainer(),
+			createTodoContainer()
+		);
+	};
 
-    return {
-        createLayout
-    };
+	return {
+		createLayout,
+	};
 })();
 
-export default initializeDOM
+export default initializeDOM;
