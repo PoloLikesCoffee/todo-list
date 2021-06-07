@@ -1,15 +1,17 @@
+@font-face {
+	font-family: 'bananaslip_plusplus';
+	src: url('fonts/bananaslipplus-webfont.woff2') format('woff2'),
+		url('fonts/bananaslipplus-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 :root {
-	--font-family: 'Arvo', serif;
-	--color-purple: rgb(178, 141, 199);
-	--color-pink: rgb(247, 167, 180);
-	--color-yellow: rgb(255, 218, 11);
-	--color-orange: rgb(248, 127, 56);
-	--color-red: rgb(209, 78, 78);
-	--color-green: rgb(60, 148, 57);
-	--color-background: rgb(107, 227, 218);
-	--color-menu: rgb(41, 111, 130);
-	--color-header: rgb(89, 191, 193);
-	--color-button: rgb(118, 124, 164);
+	--font-family: 'bananaslip_plusplus';
+	--color-yellow: rgb(253, 200, 0);
+	--color-white: rgb(255, 255, 254);
+	--color-black: rgb(1, 0, 0);
+	--color-beige: rgb(255, 236, 177);
 }
 
 *,
@@ -21,10 +23,10 @@
 
 body {
 	margin: 0;
-	background-color: var(--color-background);
+	background-color: var(--color-yellow);
 	font-family: var(--font-family);
 	font-size: 1.2rem;
-	color: white;
+	color: var(--color-black);
 }
 
 /* website layout*/
@@ -45,13 +47,12 @@ body {
 
 .header {
 	grid-area: header;
-	color: rgba(0, 0, 0, 0.1);
+	color: var(--color-beige);
 	font-size: calc(7vw + 2rem);
-	font-style: italic;
-	font-weight: 700;
-	letter-spacing: 2px;
+	font-weight: bold;
+	/* letter-spacing: 2px; */
 	text-align: center;
-	margin: -0.5rem 0 0.5rem;
+	margin: 0.5rem 0.5rem;
 }
 
 .header i {
@@ -66,7 +67,7 @@ body {
 .project-list {
 	font-size: 1.2rem;
 	line-height: 1.7;
-	list-style-type: katakana;
+	list-style-type: hiragana;
 	/* padding-left: 1.1rem; */
 }
 
@@ -81,13 +82,13 @@ body {
 }
 
 .active-list {
-	color: var(--color-menu);
+	color: var(--color-beige);
 	font-weight: 700;
 }
 
 .project-name .counter {
-	background: var(--color-button);
-	color: white;
+	background-color: var(--color-white);
+	color: var(--color-black);
 	font-size: 0.8rem;
 	width: 1.2rem;
 	height: 1.2rem;
@@ -127,7 +128,7 @@ form {
 }
 
 .btn.create-task {
-	color: var(--color-button);
+	color: var(--color-black);
 	margin-left: 0;
 }
 
@@ -179,7 +180,7 @@ form {
 
 .todo-header {
 	padding: var(--spacer);
-	background-color: var(--color-button);
+	background-color: var(--color-white);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -200,7 +201,8 @@ form {
 
 .counter-container {
 	position: relative;
-	background-color: var(--color-menu);
+	background-color: var(--color-black);
+	color: var(--color-white);
 	width: 200px;
 	height: 50px;
 	display: flex;
@@ -215,7 +217,7 @@ form {
 	height: 0px;
 	width: 0px;
 	border: 10px solid transparent;
-	border-top-color: var(--color-menu);
+	border-top-color: var(--color-black);
 	position: absolute;
 	bottom: -20px;
 	left: calc(50% - 10px);
@@ -230,7 +232,7 @@ form {
 .todo-body {
 	padding: var(--spacer);
 	width: 100%;
-	background: whitesmoke;
+	background: var(--color-beige);
 }
 
 .delete-stuff {
@@ -263,11 +265,11 @@ form {
 }
 
 .new-task-creator .create {
-	color: var(--color-button);
+	color: var(--color-black);
 }
 
 .new-task-creator input {
-	color: var(--color-button);
+	color: var(--color-black);
 	width: 90%;
 }
 
@@ -283,7 +285,7 @@ form {
 }
 
 .task {
-	color: var(--color-button);
+	color: var(--color-black);
 	position: relative;
 	margin-bottom: 1.25em;
 }
@@ -373,7 +375,7 @@ p {
 }
 
 .btn.validate:hover {
-	color: var(--color-menu);
+	color: var(--color-yellow);
 	opacity: 1;
 }
 
@@ -385,7 +387,7 @@ p {
 	width: 20px;
 	height: 20px;
 	transform-origin: center;
-	border: 3px solid var(--color-button);
+	border: 3px solid var(--color-black);
 	border-radius: 50%;
 	vertical-align: -6px;
 	margin-right: 10px;
@@ -407,7 +409,7 @@ label:hover {
 	width: 0px;
 	height: 3px;
 	border-radius: 2px;
-	background: var(--color-button);
+	background: var(--color-black);
 	position: absolute;
 	transform: rotate(45deg);
 	top: 5px;
@@ -421,7 +423,7 @@ label:hover {
 	width: 0;
 	height: 3px;
 	border-radius: 2px;
-	background: var(--color-button);
+	background: var(--color-black);
 	position: absolute;
 	transform: rotate(305deg);
 	top: 9px;
@@ -445,19 +447,19 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']:checked + label span {
-	background-color: var(--color-button);
+	background-color: var(--color-black);
 	transform: scale(1.2);
 }
 
 input[type='checkbox']:checked + label span::after {
 	width: 15px;
-	background: whitesmoke;
+	background: var(--color-beige);
 	transition: width 150ms ease 100ms;
 }
 
 input[type='checkbox']:checked + label span::before {
 	width: 5px;
-	background: whitesmoke;
+	background: var(--color-beige);
 	transition: width 150ms ease 100ms;
 }
 
