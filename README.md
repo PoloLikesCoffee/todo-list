@@ -7,7 +7,7 @@ A project made with the purpose of practicing using modules, factory functions, 
 👉 https://pololikescoffee.github.io/todo-list/
 
 ## About
-A simple todo list app when the user can create projects and tasks.
+A simple todo list app where the user can create projects and tasks.
 
 ## Features
 - The user can edit his/her tasks
